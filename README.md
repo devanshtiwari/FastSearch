@@ -1,4 +1,5 @@
-# FastSearch
+# FastSearch Java Lib
+
 Easy and simple Searching Directories and Sub directories for a file or folder name multiple times.
 
 The utility contains a class FastSearch. Object of this class can be used for Searching names in Directories and subdirectories. 
