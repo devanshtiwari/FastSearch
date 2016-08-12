@@ -1,4 +1,6 @@
 # FastSearch Java Lib
+  
+Website: https://devanshtiwari.github.io/FastSearch/
 
 Easy and simple Searching Directories and Sub directories for a file or folder name multiple times.
 
@@ -20,3 +22,6 @@ After the usage of init function, there's no need to index it once again. Search
 **Example Code App.java**
   
 App.java is example code which can show the functional utility. Make sure Jar file is included in your external library.
+
+  
+
