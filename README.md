@@ -17,6 +17,6 @@ Parameter String takes the Full File or folder name to search. The boolean value
   
 After the usage of init function, there's no need to index it once again. Searching files again and again in the same directory will be fast and easy just by using Fsearch. 
 
-** Example Code App.java **
+**Example Code App.java**
   
 App.java is example code which can show the functional utility. Make sure Jar file is included in your external library.
