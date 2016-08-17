@@ -7,24 +7,40 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 
 /**
- * Created by devanshtiwari on 11-Aug-16.
+ * <h1>FastSearch!</h1>
+ * FastSearch class helps in fast repetitive search, which will help reduce time in searching directories again and again.
+ *
+ * @author  Devansh Tiwari
+ * @version 1.0
+ * @since   2016-08-11
  */
+
 
 public class FastSearch extends Thread {
 
+    /**
+     * Variable ArrayList of type {@link FileDetail} which will be used to index the Files and Folders and thereafter searching in them.
+     */
     private ArrayList<FileDetail> F=new ArrayList<>();
 
+    /**
+     * This method will take input the path of directory to be indexed and then index the whole directory.
+     * @param filePath Path taken by the function init. This will the the directory which will be indexed wholly.
+     * @return Nothing to be returned
+     */
     public void  init(String filePath){
         ProgressBar pb=new ProgressBar();
         pb.start();
-        try {
-            indexit(filePath);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        indexit(filePath);
         ProgressBar.signal();
     }
-    private void indexit(String filePath) throws InterruptedException {
+
+    /**
+     * Inner method which is called by init method.
+     * @param filePath This is the same filepath assigned from init method.
+     * @exception IOException This exception might occur in case of File or Path doesnt exist.
+     */
+    private void indexit(String filePath) {
         Path dir = FileSystems.getDefault().getPath( filePath );
         DirectoryStream<Path> stream = null;
         try {
@@ -63,10 +79,21 @@ public class FastSearch extends Thread {
         }
     }
 
+    /**
+     *
+     * @param filename String Parameter which takes File Name to be searched.
+     * @return ArrayList of String which is specific directory of search
+     */
     public ArrayList<String> Fsearch(String filename) {
         return Fsearch(filename,false);
     }
 
+    /**
+     *
+     * @param filename Takes input the name of the File to be searched
+     * @param dir dir takes true if it is directory name to be searched or false when it is file to be searched.
+     * @return ArrayList of String which is specific directory of search
+     */
     public ArrayList<String> Fsearch(String filename, Boolean dir) {
         ProgressBar.showProgress=false;
         FileDetail temp = new FileDetail();
